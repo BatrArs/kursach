@@ -7,7 +7,6 @@ void msgsend(int work_sock, string mess)
 }
 
 
-
 std::string MD(std::string sah)
 {
     Weak::MD5 hash;
@@ -43,12 +42,16 @@ int er(std::string file_name, std::string file_error)
 int Server::self_addr(string error, string file_error, int port)
 {
     int s = socket(AF_INET, SOCK_STREAM, 0);
+    int option = 1;
+    setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option));//норм сокет
     sockaddr_in * self_addr = new (sockaddr_in);
     self_addr->sin_family = AF_INET;
     self_addr->sin_port = htons(port);
     self_addr->sin_addr.s_addr = inet_addr("127.0.0.1");
     std::cout << "Wait for connect client...\n";
     int b = bind(s,(const sockaddr*) self_addr,sizeof(sockaddr_in));
+    struct timeval timeout {55, 0};//тайм-аут
+	setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
     if(b == -1) {
         std::cout << "Binding error\n";
         error = "error binding";
@@ -84,6 +87,7 @@ int autorized(int work_sock, string file_name, string file_error)
     std::string err = "ERR";
     std::string error;
     char msg[255];
+    bzero(msg, sizeof (msg));
 
     //Авторизация
     recv(work_sock, &msg, sizeof(msg), 0);
@@ -94,24 +98,30 @@ int autorized(int work_sock, string file_name, string file_error)
     getline (file, login, ':');
     getline (file, hashq);
 
-    //СВЕРКА ЛОГИНОВ
-    if(message == login) {
+    //cout << message << " " << login << endl;
+
+    //Сверка логина
+    if(message != login){
         msgsend(work_sock,  err);
         error = "Ошибка логина";
         errors(error, file_error);
         close(work_sock);
         return 1;
-    } else {
+    }else{
 
 
         //соль отправленная клиенту
         msgsend(work_sock,  salt);
+        bzero(msg, sizeof (msg));
         recv(work_sock, msg, sizeof(msg), 0);
         std::string sah = salt + hashq;
         std::string digest;
         digest = MD(sah);
-        //СВЕРКА ПАРОЛЕЙ
-        if(digest == msg) {
+
+        //cout << digest << " " << hashq << " " << msg << endl;
+
+        //Сверка пароля
+        if(digest != msg){
             cout << digest << endl;
             cout << msg << endl;
             msgsend(work_sock,  err);
@@ -119,7 +129,7 @@ int autorized(int work_sock, string file_name, string file_error)
             errors(error, file_error);
             close(work_sock);
             return 1;
-        } else {
+        }else{
             msgsend(work_sock,  ok);
         }
     }
@@ -161,4 +171,6 @@ int math(int work_sock)
     std::cout << "Program finish!" <<std::endl;
     close(work_sock);
     return 1;
+    
 }
+
