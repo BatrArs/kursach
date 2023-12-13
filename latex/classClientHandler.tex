@@ -1,0 +1,89 @@
+\hypertarget{classClientHandler}{}\doxysection{Класс Client\+Handler}
+\label{classClientHandler}\index{ClientHandler@{ClientHandler}}
+
+
+Class for client processing.  
+
+
+
+
+{\ttfamily \#include $<$mdfile.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClientHandler_ad9fa5a846b423ed352880cc03a997662}\label{classClientHandler_ad9fa5a846b423ed352880cc03a997662}} 
+{\bfseries Client\+Handler} (\mbox{\hyperlink{classErrorHandler}{Error\+Handler}} handler)
+\item 
+int \mbox{\hyperlink{classClientHandler_a79470d674614367105ccb6a5eebdb1c9}{autorized}} (int work\+\_\+sock, string file\+\_\+name, string file\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{classClientHandler}{Client\+Handler}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classClientHandler_ae356070d4d7fc809b93ce1933c42040a}{math}} (int work\+\_\+sock)
+\begin{DoxyCompactList}\small\item\em is a method for calculating mathematical operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Class for client processing. 
+
+for client processing 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classClientHandler_a79470d674614367105ccb6a5eebdb1c9}\label{classClientHandler_a79470d674614367105ccb6a5eebdb1c9}} 
+\index{ClientHandler@{ClientHandler}!autorized@{autorized}}
+\index{autorized@{autorized}!ClientHandler@{ClientHandler}}
+\doxysubsubsection{\texorpdfstring{autorized()}{autorized()}}
+{\footnotesize\ttfamily int Client\+Handler\+::autorized (\begin{DoxyParamCaption}\item[{int}]{work\+\_\+sock,  }\item[{string}]{file\+\_\+name,  }\item[{string}]{file\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Constructor of the \mbox{\hyperlink{classClientHandler}{Client\+Handler}} class. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em handler} & Error handler. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classClientHandler}{Client\+Handler}}} & Client\+Handler\+::\+Client\+Handler(\+Error\+Handler handler) \{ m\+\_\+error\+Handler = handler; \} /$\ast$$\ast$\\
+\hline
+\end{DoxyExceptions}
+Client authorization method. 
+\begin{DoxyParams}{Аргументы}
+{\em work\+\_\+sock} & is a socket for working with the client. \\
+\hline
+{\em file\+\_\+name} & is the name of the file with the user\textquotesingle{}s data. \\
+\hline
+{\em file\+\_\+error} & is the name of the file for recording errors. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em autorized} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classClientHandler_ae356070d4d7fc809b93ce1933c42040a}\label{classClientHandler_ae356070d4d7fc809b93ce1933c42040a}} 
+\index{ClientHandler@{ClientHandler}!math@{math}}
+\index{math@{math}!ClientHandler@{ClientHandler}}
+\doxysubsubsection{\texorpdfstring{math()}{math()}}
+{\footnotesize\ttfamily int Client\+Handler\+::math (\begin{DoxyParamCaption}\item[{int}]{work\+\_\+sock }\end{DoxyParamCaption})}
+
+
+
+is a method for calculating mathematical operations. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em work\+\_\+sock} & is a socket for working with the client. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em math} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mdfile_8h}{mdfile.\+h}}\item 
+\mbox{\hyperlink{mdfile_8cpp}{mdfile.\+cpp}}\end{DoxyCompactItemize}

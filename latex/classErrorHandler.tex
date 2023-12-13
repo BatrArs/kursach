@@ -1,0 +1,72 @@
+\hypertarget{classErrorHandler}{}\doxysection{Класс Error\+Handler}
+\label{classErrorHandler}\index{ErrorHandler@{ErrorHandler}}
+
+
+Class for error handling.  
+
+
+
+
+{\ttfamily \#include $<$mdfile.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classErrorHandler_a7e5f379bd231442b898cef94556b2107}\label{classErrorHandler_a7e5f379bd231442b898cef94556b2107}} 
+{\bfseries Error\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Class for error handling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classErrorHandler_aa6ed7baa03d28557ef4abe6625a79d42}{errors}} (std\+::string \mbox{\hyperlink{classerror}{error}}, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Method for writing errors to a file. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classErrorHandler_a80a1e9d5280be9b7eb76437644657795}{er}} (std\+::string file\+\_\+name, std\+::string file\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Method for handling errors when opening a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Class for error handling. 
+
+for error handling 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classErrorHandler_a80a1e9d5280be9b7eb76437644657795}\label{classErrorHandler_a80a1e9d5280be9b7eb76437644657795}} 
+\index{ErrorHandler@{ErrorHandler}!er@{er}}
+\index{er@{er}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{er()}{er()}}
+{\footnotesize\ttfamily int Error\+Handler\+::er (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+name,  }\item[{std\+::string}]{file\+\_\+error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method for handling errors when opening a file. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+name} & File name \\
+\hline
+{\em file\+\_\+error} & File name for recording errors \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classErrorHandler_aa6ed7baa03d28557ef4abe6625a79d42}\label{classErrorHandler_aa6ed7baa03d28557ef4abe6625a79d42}} 
+\index{ErrorHandler@{ErrorHandler}!errors@{errors}}
+\index{errors@{errors}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{errors()}{errors()}}
+{\footnotesize\ttfamily void Error\+Handler\+::errors (\begin{DoxyParamCaption}\item[{std\+::string}]{error,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method for writing errors to a file. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em error} & Error text \\
+\hline
+{\em name} & File name for recording errors \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mdfile_8h}{mdfile.\+h}}\item 
+\mbox{\hyperlink{mdfile_8cpp}{mdfile.\+cpp}}\end{DoxyCompactItemize}

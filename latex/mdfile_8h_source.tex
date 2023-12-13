@@ -1,0 +1,73 @@
+\hypertarget{mdfile_8h_source}{}\doxysection{mdfile.\+h}
+\mbox{\hyperlink{mdfile_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <netinet/in.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <arpa/inet.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <cryptopp/cryptlib.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <getopt.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <cryptopp/hex.h>} \textcolor{comment}{// HexEncoder}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define CRYPTOPP\_ENABLE\_NAMESPACE\_WEAK 1}}
+\DoxyCodeLine{26 \textcolor{keyword}{using namespace }CryptoPP;}
+\DoxyCodeLine{27 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <cryptopp/md5.h>} }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classErrorHandler}{ErrorHandler}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     \mbox{\hyperlink{classErrorHandler_a7e5f379bd231442b898cef94556b2107}{ErrorHandler}}();}
+\DoxyCodeLine{39     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classErrorHandler_aa6ed7baa03d28557ef4abe6625a79d42}{errors}}(std::string \mbox{\hyperlink{classerror}{error}}, std::string name);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{classErrorHandler_a80a1e9d5280be9b7eb76437644657795}{er}}(std::string file\_name, std::string file\_error);}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{47 \textcolor{keyword}{class }\mbox{\hyperlink{classServer}{Server}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{classServer_a3e9d3cdae5672458421a175f34eea038}{Server}}(\mbox{\hyperlink{classErrorHandler}{ErrorHandler}} handler);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{int} \mbox{\hyperlink{classServer_aad6d0eef2397b3368cdd3d6ec134e462}{self\_addr}}(\textcolor{keywordtype}{string} \mbox{\hyperlink{classerror}{error}}, \textcolor{keywordtype}{string} file\_error, \textcolor{keywordtype}{int} port);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} \mbox{\hyperlink{classServer_a972db953af9cb2c28ec9359788452a5c}{client\_addr}}(\textcolor{keywordtype}{int} s, \textcolor{keywordtype}{string} \mbox{\hyperlink{classerror}{error}}, \textcolor{keywordtype}{string} file\_error);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{private}:}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \mbox{\hyperlink{classErrorHandler}{ErrorHandler}} m\_errorHandler;}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{65 \textcolor{keyword}{class }\mbox{\hyperlink{classClientHandler}{ClientHandler}}}
+\DoxyCodeLine{66 \{}
+\DoxyCodeLine{67 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68     \mbox{\hyperlink{classClientHandler}{ClientHandler}}(\mbox{\hyperlink{classErrorHandler}{ErrorHandler}} handler);}
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} \mbox{\hyperlink{classClientHandler_a79470d674614367105ccb6a5eebdb1c9}{autorized}}(\textcolor{keywordtype}{int} work\_sock, \textcolor{keywordtype}{string} file\_name, \textcolor{keywordtype}{string} file\_error);}
+\DoxyCodeLine{70     \textcolor{keywordtype}{int} \mbox{\hyperlink{classClientHandler_ae356070d4d7fc809b93ce1933c42040a}{math}}(\textcolor{keywordtype}{int} work\_sock);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{private}:}
+\DoxyCodeLine{73     std::string generate\_salt(std::size\_t length);}
+\DoxyCodeLine{74    }
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} msgsend(\textcolor{keywordtype}{int} work\_sock, \textcolor{keywordtype}{string} mess);}
+\DoxyCodeLine{76     }
+\DoxyCodeLine{77     std::string MD(std::string sah);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \mbox{\hyperlink{classErrorHandler}{ErrorHandler}} m\_errorHandler;}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{85 \textcolor{keyword}{class }\mbox{\hyperlink{classerror}{error}}: \textcolor{keyword}{public} invalid\_argument}
+\DoxyCodeLine{86 \{}
+\DoxyCodeLine{87 \textcolor{keyword}{public}:}
+\DoxyCodeLine{88     \textcolor{keyword}{explicit} \mbox{\hyperlink{classerror}{error}} (\textcolor{keyword}{const} std::string\& what\_arg):}
+\DoxyCodeLine{89         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{90     \textcolor{keyword}{explicit} \mbox{\hyperlink{classerror}{error}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char}* what\_arg):}
+\DoxyCodeLine{91         std::invalid\_argument(what\_arg) \{\}}
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+
+\end{DoxyCode}

@@ -1,0 +1,108 @@
+\hypertarget{classServer}{}\doxysection{Класс Server}
+\label{classServer}\index{Server@{Server}}
+
+
+Class for the server.  
+
+
+
+
+{\ttfamily \#include $<$mdfile.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_a3e9d3cdae5672458421a175f34eea038}{Server}} (\mbox{\hyperlink{classErrorHandler}{Error\+Handler}} handler)
+\begin{DoxyCompactList}\small\item\em Class for the server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServer_aad6d0eef2397b3368cdd3d6ec134e462}{self\+\_\+addr}} (string \mbox{\hyperlink{classerror}{error}}, string file\+\_\+error, int port)
+\begin{DoxyCompactList}\small\item\em Method for configuring the server address. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServer_a972db953af9cb2c28ec9359788452a5c}{client\+\_\+addr}} (int s, string \mbox{\hyperlink{classerror}{error}}, string file\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Method for setting up the client\textquotesingle{}s address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Class for the server. 
+
+for the server 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classServer_a3e9d3cdae5672458421a175f34eea038}\label{classServer_a3e9d3cdae5672458421a175f34eea038}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classErrorHandler}{Error\+Handler}}}]{handler }\end{DoxyParamCaption})}
+
+
+
+Class for the server. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Аргументы}
+{\em handler} & handler \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em for} & the server \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classServer_a972db953af9cb2c28ec9359788452a5c}\label{classServer_a972db953af9cb2c28ec9359788452a5c}} 
+\index{Server@{Server}!client\_addr@{client\_addr}}
+\index{client\_addr@{client\_addr}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{client\_addr()}{client\_addr()}}
+{\footnotesize\ttfamily int Server\+::client\+\_\+addr (\begin{DoxyParamCaption}\item[{int}]{s,  }\item[{string}]{error,  }\item[{string}]{file\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Method for setting up the client\textquotesingle{}s address. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em s} & \mbox{\hyperlink{classServer}{Server}} socket descriptor \\
+\hline
+{\em error} & Error text \\
+\hline
+{\em file\+\_\+error} & File name for recording errors \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em client\+\_\+addr} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classServer_aad6d0eef2397b3368cdd3d6ec134e462}\label{classServer_aad6d0eef2397b3368cdd3d6ec134e462}} 
+\index{Server@{Server}!self\_addr@{self\_addr}}
+\index{self\_addr@{self\_addr}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{self\_addr()}{self\_addr()}}
+{\footnotesize\ttfamily int Server\+::self\+\_\+addr (\begin{DoxyParamCaption}\item[{string}]{error,  }\item[{string}]{file\+\_\+error,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+
+
+Method for configuring the server address. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em error} & Error text \\
+\hline
+{\em file\+\_\+error} & File name for recording errors \\
+\hline
+{\em port} & \mbox{\hyperlink{classServer}{Server}} port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em self\+\_\+addr} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mdfile_8h}{mdfile.\+h}}\item 
+\mbox{\hyperlink{mdfile_8cpp}{mdfile.\+cpp}}\end{DoxyCompactItemize}
