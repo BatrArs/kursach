@@ -107,6 +107,7 @@ int Server::client_addr(int s, string error, string file_error)
     } else {
         //Successful connection to the server
         std::cout << "Successfull client connection!\n";
+        //std::cout << work_sock << endl;"\n";
         return work_sock;
     }
 }
